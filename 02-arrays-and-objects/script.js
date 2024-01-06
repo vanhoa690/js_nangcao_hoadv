@@ -10,7 +10,7 @@ let x;
 // console.log(x);
 
 const fruits = ["apple", "pear", "orange"];
-const berries = ["strawberry", "blueberry", "rasberry"];
+const berries2 = ["strawberry", "blueberry", "rasberry"];
 
 // fruits.push(berries);
 
