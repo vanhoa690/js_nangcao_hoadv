@@ -1,36 +1,90 @@
-let x;
-// const arr = [28, 38, 44, 29, 109];
+// 03-functions-scope
+function sayHello(name = 'hoadv', age = 34) {
+  //   console.log('Hello cac ban ' + name + 'Toi dang ' + age); //PHP noi chuoi
+  // Template literals (Template strings)
+  console.log(`Hello cac ban ${name} . Toi dang ${age}`);
+}
 
-// // shift() - Remove first value
-// // arr.shift();
+// sayHello('Nam');
 
-// // x = arr.slice(1, 4);
-// x = arr.splice(1, 4); // so luong lay
-// // x = []
-// console.log(x);
+//arrow function () => {}
+// function addNumber() {}
+const addNumber = (a, b) => a + b; //return a + b
+// console.log(addNumber(9, 10));
 
-const fruits = ["apple", "pear", "orange"];
-const berries2 = ["strawberry", "blueberry", "rasberry"];
+//04-logic-control-flow
 
-// fruits.push(berries);
+// Falsy Values:
+// - false
+// - 0
+// - "" or '' (Empty string)
+// - null
+// - undefined
+// - NaN
 
-// console.log(fruits);
+// Truthy Values:
+// - Everything else that is not falsy
+// - true
+// - '0' (0 in a string)
+// - ' ' (space in a string)
+// - 'false' (false in a string)
+// - [] (empty array)
+// - {} (empty object)
+// - function () {} (empty function)
 
-// x = fruits[3][1];
-// x = fruits.concat(berries);
+const arr = []; // check arr trong
+if (arr.length) {
+  // age > 18
+  console.log('truthy');
+} else {
+  console.log('fasthy');
+}
 
-// x = [...fruits, ...berries]; //"apple", "pear", "orange" // noi 2 mang
+// Using a ternary operator dieu_kien ? dung_lam_gi : sai_lam_gi
 
-// clone 1 new array
+const age = 22;
+const canDoThis = age > 18 ? 'Di hoc len cao, di lam' : 'Hoc Cap 3, 2';
 
-// x = [...fruits];
-// const abc = fruits;
+// console.log(canDoThis);
 
-// abc.push("cam");
+// map: [] => new Array
 
-const arr = [1, 2, [3, 4, 5], 6, [7, 8]];
+const companies = [
+  { name: 'Company One', category: 'Finance', start: 1981, end: 2004 },
+  { name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },
+  { name: 'Company Three', category: 'Auto', start: 1999, end: 2007 },
+  { name: 'Company Four', category: 'Retail', start: 1989, end: 2010 },
+  { name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },
+  { name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },
+  { name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },
+  { name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },
+  { name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },
+];
 
-x = arr.flat(); // trai phang array
+const companyInfo = companies.map((company) => {
+  return {
+    name: company.name,
+    category: company.category,
+    timer: `Start: ${company.start} - End: ${company.end}`,
+  };
+});
+// companyInfo.map(item => `<h1>item.name</h1><p>item.category</p>`)
+// console.log(companyInfo); //<p>company.timer</p>
 
-console.log({ x });
-// console.log({ abc });
+// const companyInfo2 = [];
+// for (let company of companies) {
+//   companyInfo2.push({
+//     name: company.name,
+//     category: company.category,
+//     timer: `Start: ${company.start} - End: ${company.end}`,
+//   });
+// }
+
+// console.log(companyInfo2);
+
+// const resultsApi = {
+//   data: [],
+//   status: 200,
+// };
+// const { mess } = resultsApi;
+// console.log(mess);
