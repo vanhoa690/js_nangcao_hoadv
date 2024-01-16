@@ -2,14 +2,11 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  console.log('init');
   renderProductList();
 }
 
 function renderProductList() {
-  // call api
-  // fetch()  axios
-  // asyn/await  then
+  // Lay Data
   const productList = [
     {
       id: 1,
@@ -279,8 +276,10 @@ function renderProductList() {
     },
   ];
 
-  const productListEl = document.getElementById('product-list');
+  const productListElm = document.getElementById('product-list');
+
   const tbody = document.createElement('tbody');
+
   tbody.innerHTML = `
   <thead
   class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
@@ -296,38 +295,37 @@ function renderProductList() {
 ${productList
   .map(
     (product) => `
-<tr
-class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
->
-<th
-  scope="row"
-  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
->
-  ${product.title}
-</th>
-<td class="px-6 py-4">${product.category}</td>
-<td class="px-6 py-4">$${product.price}</td>
-<td class="px-6 py-4 flex gap-2">
-  <a
-    href="#"
-    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >Edit</a
-  >
-  <a
-  href="#"
-  class="font-medium text-red-600 dark:text-red-500 hover:underline"
-  >Remove</a
->
-</td>
-</tr>
-`
+        <tr
+        class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+        >
+        <th
+        scope="row"
+        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+        ${product.title}
+        </th>
+        <td class="px-6 py-4">${product.category}</td>
+        <td class="px-6 py-4">$${product.price}</td>
+        <td class="px-6 py-4 flex gap-2">
+        <a
+            href="#"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >Edit</a
+        >
+        <a
+            href="#"
+            class="font-medium text-red-600 dark:text-red-500 hover:underline"
+            >Remove</a
+        >
+        </td>
+    </tr>
+    `
   )
   .join('')}
  
-
-
  
- 
-        </tbody>`;
-  productListEl.appendChild(tbody);
+</tbody>
+  `;
+
+  productListElm.appendChild(tbody);
 }

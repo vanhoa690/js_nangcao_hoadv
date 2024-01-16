@@ -1,9 +1,13 @@
-// map: [] => new []
+// map : [] => new Array // so che du lieu
+
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// newNumber [2,4,6...]
-const newNumber = numbers.map((number) => {
-  return number * 2;
+// [ 2, 4, 6....] x2
+
+const newNumbers = numbers.map((item) => {
+  return item * 2;
 });
+
+// console.log(newNumbers);
 
 const companies = [
   { id: 1, name: 'Company One', category: 'Finance', start: 1981, end: 2004 },
@@ -29,50 +33,42 @@ const companies = [
   { id: 9, name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },
 ];
 
-// const companyInfo = companies.map((company, index) => {
-//   //   console.log({ company, index });
-//   return {
-//     name: company.name,
-//     category: company.category,
-//     timer: `Start: ${company.start}  - End ${company.end}`,
-//   };
-// });
-// console.log(companyInfo);
+// filter: Loai bo du lieu minh ko thich
 
-//  UI p : time: company.timer resApi = [products].map(product) => `h1 product.title .span.produc.price`
+const newCompanies = companies.filter((item) => {
+  return item.category === 'Finance'; // filter true, false next
+});
 
-// filter: Lọc theo điều kiện
-// start > 2000
-// Delete item id -> xoa
-// const newCompanies = companies.filter((company) => {
-//   //   console.log(company);
-//   //   return company.start > 2000 && company.end < 2020; // true
-//   return company.start !== 1999; // true
-// });
-
-let newCompanies = [];
-
-function handleRemoveCompany(id) {
-  newCompanies = companies.filter((company) => {
-    return company.id !== id; // true
-  });
+function removeCompany(id) {
+  return companies.filter((item) => item.id !== id);
 }
 
-// handleRemoveCompany(2);
+const newCompanies2 = removeCompany(9);
 
-// console.log(newCompanies);
+// console.log(newCompanies2);
+
+// const companyInfo = companies.map((c) => {
+//   return {
+//     name: c.name,
+//     category: c.category,
+//     timer: `bat dau ${c.start} - ket thuc ${c.end}`,
+//     // startEnd: `Start ${c.start} - End ${c.end}`,
+//   };
+// });
+
+// console.log(companyInfo);
+// //companyInfo.map(item) => UI: h1 c.title, p.startEnd
 
 // Shopping cart example (objects)
 const cart = [
-  { id: 1, name: 'Product 1', price: 130, quanlity: 2 },
-  { id: 2, name: 'Product 2', price: 150, quanlity: 1 },
-  { id: 3, name: 'Product 3', price: 200, quanlity: 3 },
+  { id: 1, name: 'Product 1', price: 130, soLuong: 1 },
+  { id: 2, name: 'Product 2', price: 150, soLuong: 2 },
+  { id: 3, name: 'Product 3', price: 200, soLuong: 3 },
 ];
 
-const totalPice = cart.reduce(function (total, product) {
-//   console.log({ total, product });
-  return total + product.price * product.quanlity; // 0 + 130*2 = 260  = total
-  // total + 150 = 130 + 150 = 280
-}, 0);
-
-console.log({ totalPice });
+// totalBill = ?
+// totalBill = 0
+const totalBill = cart.reduce(
+  (total, product) => total + product.price * product.soLuong,
+  0
+);

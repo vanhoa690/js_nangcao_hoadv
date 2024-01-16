@@ -1,51 +1,29 @@
+const title = document.getElementById('title');
+// add class
+title.classList.add('first', 'second', 'third');
+// console.log(h1List);
+// h1List[0].innerText = 'Day la h1 dau tien';
+// h1List[1].innerText = 'Day la h1 thu 2';
+// title.innerText = '<em>Xin chao cac ban hoc JS nang cao</em>';
+// title.innerHTML = '<em>Xin chao cac ban hoc JS nang cao</em>';
+
 // Single Element
+// document.getElementById() => Element
+// document.querySelector('h1') <h1 lay thang nay></h1><h1></h1>
 
-const title = document.getElementById('app-title');
-// console.log(title);
+// Mutil Element
 
-// Use any CSS selector
-// const title2 = document.querySelector('h1');
-// console.log(title2);
+// querySelectorAll() => []
+// getElementsByClassName()
+// getElementsByTagName()
 
-// Returns a NodeList
-// querySelectorAll
-// []
+// Create new Element
+//document.createElement
 
-// Array Element
-const listItems = document.querySelectorAll('li');
+const newElm = document.createElement('div');
+newElm.innerHTML = 'Day la con toi dang di hoc mau giao';
+const idMain = document.getElementById('main');
 
-// console.log(listItems);
+console.log(idMain);
 
-listItems[0].innerText = '<em>Day la Text<em>';
-listItems[1].style.color = 'red';
-listItems[2].innerHTML = '<em>Inner HTML</em>';
-
-// 07-create-elements
-// document.createElement('the_HTML')
-// const span = document.createElement('span');
-// span.innerText = 'Day la the Div toi muon gan vao sau title';
-// //. gan sau title
-// title.appendChild(span);
-
-// insertAdjacentElement Example
-// function insertElement() {
-//   const filter = document.querySelector('.filter');
-
-//   const h1 = document.createElement('h1');
-//   h1.textContent = 'insertAdjacentElement';
-
-//   filter.insertAdjacentElement('beforebegin', h1);
-// }
-
-function insertBeforeItem() {
-  const ul = document.querySelector('ul');
-
-  const li = document.createElement('li');
-  li.textContent = 'insertBefore';
-
-  const thirdItem = document.querySelector('li:nth-child(3)');
-
-  ul.insertBefore(li, thirdItem);
-}
-
-insertBeforeItem();
+idMain.appendChild(newElm);
