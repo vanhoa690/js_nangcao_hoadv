@@ -3,19 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASM CRUD - Product - Json-server API</title>
+    <title>Admin Product List</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Sidebar -->
-
     <button
-      data-drawer-target="default-sidebar"
-      data-drawer-toggle="default-sidebar"
-      aria-controls="default-sidebar"
+      data-drawer-target="sidebar-multi-level-sidebar"
+      data-drawer-toggle="sidebar-multi-level-sidebar"
+      aria-controls="sidebar-multi-level-sidebar"
       type="button"
       class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
     >
@@ -36,7 +34,7 @@
     </button>
 
     <aside
-      id="default-sidebar"
+      id="sidebar-multi-level-sidebar"
       class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
       aria-label="Sidebar"
     >
@@ -63,6 +61,68 @@
               </svg>
               <span class="ms-3">Dashboard</span>
             </a>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-example"
+              data-collapse-toggle="dropdown-example"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 21"
+              >
+                <path
+                  d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
+                />
+              </svg>
+              <span
+                class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >E-commerce</span
+              >
+              <svg
+                class="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-example" class="hidden py-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Billing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Invoice</a
+                >
+              </li>
+            </ul>
           </li>
           <li>
             <a
@@ -201,130 +261,18 @@
     </aside>
 
     <div class="p-4 sm:ml-64">
+      <h2 class="py-6 text-center text-4xl font-extrabold dark:text-white">
+        Admin Product List
+      </h2>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table
+          id="product-list"
           class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
         >
-          <thead
-            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
-          >
-            <tr>
-              <th scope="col" class="px-6 py-3">Product name</th>
-              <th scope="col" class="px-6 py-3">Color</th>
-              <th scope="col" class="px-6 py-3">Category</th>
-              <th scope="col" class="px-6 py-3">Price</th>
-              <th scope="col" class="px-6 py-3">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Apple MacBook Pro 17"
-              </th>
-              <td class="px-6 py-4">Silver</td>
-              <td class="px-6 py-4">Laptop</td>
-              <td class="px-6 py-4">$2999</td>
-              <td class="px-6 py-4">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-              </td>
-            </tr>
-            <tr
-              class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Microsoft Surface Pro
-              </th>
-              <td class="px-6 py-4">White</td>
-              <td class="px-6 py-4">Laptop PC</td>
-              <td class="px-6 py-4">$1999</td>
-              <td class="px-6 py-4">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-              </td>
-            </tr>
-            <tr
-              class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Magic Mouse 2
-              </th>
-              <td class="px-6 py-4">Black</td>
-              <td class="px-6 py-4">Accessories</td>
-              <td class="px-6 py-4">$99</td>
-              <td class="px-6 py-4">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-              </td>
-            </tr>
-            <tr
-              class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-            >
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Google Pixel Phone
-              </th>
-              <td class="px-6 py-4">Gray</td>
-              <td class="px-6 py-4">Phone</td>
-              <td class="px-6 py-4">$799</td>
-              <td class="px-6 py-4">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                Apple Watch 5
-              </th>
-              <td class="px-6 py-4">Red</td>
-              <td class="px-6 py-4">Wearables</td>
-              <td class="px-6 py-4">$999</td>
-              <td class="px-6 py-4 gap-6 flex">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-                <button
-                  class="font-medium text-red-600 dark:text-red-500 hover:underline"
-                >
-                  Remove
-                </button>
-              </td>
-            </tr>
-          </tbody>
+         
         </table>
       </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="./list.js"></script>
   </body>
 </html>
