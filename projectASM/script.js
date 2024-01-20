@@ -282,6 +282,7 @@ function renderProductList() {
 
   // b2: Create elem
   const div = document.createElement("div");
+
   div.classList.add("flex", "gap-2", "flex-wrap");
 
   //b3 Update Content
