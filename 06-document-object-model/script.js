@@ -1,29 +1,85 @@
-const title = document.getElementById('title');
-// add class
-title.classList.add('first', 'second', 'third');
-// console.log(h1List);
-// h1List[0].innerText = 'Day la h1 dau tien';
-// h1List[1].innerText = 'Day la h1 thu 2';
-// title.innerText = '<em>Xin chao cac ban hoc JS nang cao</em>';
-// title.innerHTML = '<em>Xin chao cac ban hoc JS nang cao</em>';
+// single-element
+// document.getElementById()
 
-// Single Element
-// document.getElementById() => Element
-// document.querySelector('h1') <h1 lay thang nay></h1><h1></h1>
+// const title = document.getElementById("title");
 
-// Mutil Element
+// console.log(title);
 
-// querySelectorAll() => []
+// // title.innerText = "<em>Xin chao cac ban hoc JS 2</em>";
+// title.innerHTML = "<em>Xin chao cac ban hoc JS 2</em>";
+
+// title.style.color = "red";
+
+// document.querySelector()
+
+//multiple-elements
+// querySelectorAll()
+// Returns a NodeList
+
 // getElementsByClassName()
+// Returns an HTMLCollection
 // getElementsByTagName()
+const titleList = document.querySelectorAll("h1"); //.class_name
 
-// Create new Element
-//document.createElement
+// console.log(titleList);
 
-const newElm = document.createElement('div');
-newElm.innerHTML = 'Day la con toi dang di hoc mau giao';
-const idMain = document.getElementById('main');
+// index
+titleList[1].style.color = "red";
 
-console.log(idMain);
+// Cretea Element: chua add vao dom
 
-idMain.appendChild(newElm);
+const div = document.createElement("div"); // con moi sinh ra
+
+// Add class
+div.classList.add("desc", "cl21", "cl3");
+
+div.innerHTML = `Toi co kien thuc JS, PHP, SQL .... Git`;
+const eleParent = document.getElementById("main"); // cha
+//.appendChild
+eleParent.appendChild(div);
+// eleParent.insertAdjacentElement("afterend", div);
+
+/*
+<!-- beforebegin -->
+<p> // cha
+  <!-- afterbegin -->
+  foo // con
+  <!-- beforeend -->
+//   appendChild
+</p>
+<!-- afterend -->
+*/
+
+// Get El
+// Update Content
+// Create Elm
+// Insert Elm
+
+// On DOM Load
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  //call api
+  // show loading
+  //renderUI
+}
+
+// Resize Event
+window.addEventListener("resize", () => {
+  document.querySelector(
+    "h1"
+  ).innerText = `Resized to ${window.innerWidth} x ${window.innerHeight}`;
+});
+
+// Scroll Event
+window.addEventListener("scroll", () => {
+  console.log(`Scrolled: ${window.scrollX} x ${window.scrollY}`);
+
+  if (window.scrollY > 70) {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+});
