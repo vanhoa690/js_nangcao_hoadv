@@ -5,17 +5,16 @@ function init() {
   renderProductList();
 }
 
-function handleDelete(id) {
-  // alert(id)
-  console.log("handleDelete", id);
+function handleDeleteProduct(id) {
+  // alert(id);
   if (window.confirm("Ban co mua xoa san pham nay ko????")) {
     // call api delete(id)
-    console.log("xoa");
+    console.log("xoa", id);
   }
 }
 
 function renderProductList() {
-  // Lay Data
+  // Lay Data API
   const productList = [
     {
       id: 1,
@@ -319,12 +318,12 @@ ${productList
         <td class="px-6 py-4">$${product.price}</td>
         <td class="px-6 py-4 flex gap-2">
         <a
-            href="#"
+            href="./edit.html?productId=${product.id}"
             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
             >Edit</a
         >
         <button
-            onClick="handleDelete(${product.id})"
+            onClick=handleDeleteProduct(${product.id})
             class="font-medium text-red-600 dark:text-red-500 hover:underline"
             >Remove</
             button>

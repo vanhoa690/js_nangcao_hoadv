@@ -1,5 +1,6 @@
 // On DOM Load
 window.addEventListener("DOMContentLoaded", init);
+// CRUD: Create
 // B1 Get elements
 const form = document.getElementById("form");
 const titleElement = document.getElementById("title");
