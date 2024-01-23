@@ -17,12 +17,11 @@
   <body>
     <div class="container">
       <header>
-        <a href="https://google.com">
-          <img src="images/note.png" alt="" />
-        </a>
         <h1>Shopping List</h1>
       </header>
       <form id="form">
+        <!-- input text nhap text: title; image, price (number), desc -->
+        <!-- Select: Category -->
         <div class="form-control">
           <input
             type="text"
@@ -45,12 +44,12 @@
           <input
             type="text"
             class="form-input"
-            id="item-desc"
+            id="desc"
             name="item"
             placeholder="Enter Description"
           />
         </div>
-        <select id="category" name="priority" class="form-input">
+        <select id="category" name="category" class="form-input">
           <option value="">Select Category</option>
           <option value="Laptop">Laptop</option>
           <option value="Iphone">Iphone</option>
@@ -62,44 +61,6 @@
           </button>
         </div>
       </form>
-
-      <div class="filter">
-        <input
-          type="text"
-          class="form-input-filter"
-          id="filter"
-          placeholder="Filter Items"
-        />
-      </div>
-
-      <ul id="item-list" class="items">
-        <li>
-          Apples
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li>
-          Orange Juice
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li>
-          Oreos
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li>
-          Milk
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-      </ul>
-
-      <button type="submit" id="clear" class="btn-clear">Clear All</button>
     </div>
 
     <script src="script.js"></script>

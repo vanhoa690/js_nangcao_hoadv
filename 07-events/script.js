@@ -1,34 +1,37 @@
-// B1 Lay Element Input: getElementById
-const title = document.getElementById("title");
-const image = document.getElementById("image");
-const category = document.getElementById("category");
 const form = document.getElementById("form");
+const titleElement = document.getElementById("title");
+const imageElement = document.getElementById("image");
+const descElement = document.getElementById("desc");
+const categoryElement = document.getElementById("category");
 
-// Khi nhan het du lieu tu input, select => button submit
-// form lang nghe su kien submit()
+// Get element
+// lang nghe submit
+// preventDefault(): ngan can sui bot
+// Get value input: titleElement.value;
+// call api
 
+// addEventListener lang nghe su kien 'submit'
+// xay ra an button submit (button nam trong form)
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
-  // B1: chan day input value len url
+  // b1: ngan chan day input value len url
   event.preventDefault();
 
-  // B2: lay value input
+  // b2. Get value from input
+  const title = titleElement.value;
+  const image = imageElement.value;
+  const desc = descElement.value;
+  const category = categoryElement.value;
+
+  console.log({ title, image, desc, category });
+
   const newProduct = {
-    title: title.value,
-    image: image.value,
-    category: category.value,
+    title,
+    image,
+    desc,
+    category,
   };
 
-  console.log("newProduct", newProduct);
-
-  // B3: validate: check reuired filed can nhap
-  if (!title.value || !image.value) {
-    alert("Please input title and image");
-    return;
-  }
-
-  // B4: call api: fetch / axios
-  // create: post
-  // edit : patch /(put)
+  // call api post(api_url, newProduct)
 }

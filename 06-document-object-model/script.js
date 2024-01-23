@@ -62,12 +62,20 @@ window.addEventListener("resize", () => {
   ).innerText = `Resized to ${window.innerWidth} x ${window.innerHeight}`;
 });
 
+// DOM
 
 // Get Single Element: getElementById('id')
+document.getElementById("id");
+
 // Get Mutil Element : querySellectorAll('selector')
+document.querySellectorAll("selector");
 
 // Create new DOM: createElement('div')
+const div = document.createElement("div"); // con
 
 // div.interHTML : Update noi dung Element
+div.innerHTML = "Update content";
 
 // Insert DOM: cha.appendChild(con)
+const parentElement = document.getElementById("parentElementId");
+parentElement.appendChild(div);
