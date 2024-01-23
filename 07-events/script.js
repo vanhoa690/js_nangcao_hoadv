@@ -27,7 +27,7 @@ function handleSubmit(event) {
     alert("Please input title and image");
     return;
   }
-  
+
   // B4: call api: fetch / axios
   // create: post
   // edit : patch /(put)
