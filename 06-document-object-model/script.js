@@ -1,29 +1,73 @@
-const title = document.getElementById('title');
-// add class
-title.classList.add('first', 'second', 'third');
-// console.log(h1List);
-// h1List[0].innerText = 'Day la h1 dau tien';
-// h1List[1].innerText = 'Day la h1 thu 2';
-// title.innerText = '<em>Xin chao cac ban hoc JS nang cao</em>';
-// title.innerHTML = '<em>Xin chao cac ban hoc JS nang cao</em>';
+// single-element
 
-// Single Element
-// document.getElementById() => Element
-// document.querySelector('h1') <h1 lay thang nay></h1><h1></h1>
+// document.getElementById()
 
-// Mutil Element
+// const title = document.getElementById("title");
 
-// querySelectorAll() => []
+// console.log(title);
+
+// title.innerText = "<em>Xin chao cac ban hoc JS</em>";
+// title.innerHTML = "<em>Xin chao cac ban hoc JS</em>";
+
+// title.style.color = "red";
+
+// document.querySelector()
+
+// const title = document.querySelector("h1"); // .class_name
+// console.log(title);
+
+// Arr element
+
+// querySelectorAll()
+// Returns a NodeList
+
+const title = document.querySelectorAll("h1"); // .class_name
+// console.log(title);
+// title[0].style.color = "red"; //[index]
+
 // getElementsByClassName()
+// Returns an HTMLCollection
 // getElementsByTagName()
 
-// Create new Element
-//document.createElement
+// Create Element moi
 
-const newElm = document.createElement('div');
-newElm.innerHTML = 'Day la con toi dang di hoc mau giao';
-const idMain = document.getElementById('main');
+const divChild = document.createElement("div");
+// chua gan vao DOM
+// Thay doi noi dung
+divChild.innerText = "Day la the div moi sinh";
+// Tim cha de no gan vao
+const elmParent = document.getElementById("main");
+elmParent.appendChild(divChild);
+// appendChild : trong element
+// insertElement : truoc, sau elmParant
 
-console.log(idMain);
+// Add class name
+title[0].remove();
+title[1].classList.add("tieu-de", "class-1", "class_2");
 
-idMain.appendChild(newElm);
+// On DOM Load
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  console.log("init");
+  //call api
+  // getElem
+  // render UI
+}
+
+// Resize Event
+window.addEventListener("resize", () => {
+  document.querySelector(
+    "h1"
+  ).innerText = `Resized to ${window.innerWidth} x ${window.innerHeight}`;
+});
+
+
+// Get Single Element: getElementById('id')
+// Get Mutil Element : querySellectorAll('selector')
+
+// Create new DOM: createElement('div')
+
+// div.interHTML : Update noi dung Element
+
+// Insert DOM: cha.appendChild(con)
