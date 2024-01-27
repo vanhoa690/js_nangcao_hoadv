@@ -62,13 +62,15 @@ window.addEventListener("resize", () => {
   ).innerText = `Resized to ${window.innerWidth} x ${window.innerHeight}`;
 });
 
-// 6  - DOM
+// 6 - DOM - HTML
 
+// getElementById
 // 1. Get Single Element: getElementById('id') // nho cach nay
 document.getElementById("id");
 
 // 2. Get Mutil Element : querySellectorAll('selector') // querySellectorAll
 document.querySellectorAll("selector");
+
 
 // 3. Create new DOM: createElement('div')  // createElement(): tạo mới thẻ html
 const divElement = document.createElement("div"); // con

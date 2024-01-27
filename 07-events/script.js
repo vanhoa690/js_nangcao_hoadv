@@ -1,36 +1,36 @@
-// FORM
-// 1. addEventListener DOMLOADED
-window.addEventListener("DOMContentLoaded", init);
-// 2. Lang nghe su kien submit
-// - Lay phan tu DOM form
-const formElement = document.getElementById("formID");
-const titleElement = document.getElementById("titleID");
+// JS Form
+//getElementById
+const form = document.getElementById("form");
+const titleElement = document.getElementById("title");
 const imageElement = document.getElementById("image");
 const descElement = document.getElementById("desc");
-const categoryElement = document.getElementById("categoryID");
+const categoryElement = document.getElementById("category");
+
+// addEventListener: lang nghe su kien submit form (click button submit)
+// ten event: 'submit'
+
+// On DOM Load
+window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  // submit - click button submit
-  formElement.addEventListener("submit", handleSubmit);
+  form.addEventListener("submit", handleSubmit);
 }
 
 function handleSubmit(event) {
-  // 1. ngan chan viec day du lieu input len url
+  //1. chan hanh dong mac dinh day du lieu len url
   event.preventDefault();
 
-  // 2. Lay du lieu input: element.value
+  //2. Get value input : element.value
   const title = titleElement.value;
   const image = imageElement.value;
   const desc = descElement.value;
   const category = categoryElement.value;
 
   const newProduct = {
-    title,
+    title, // newProduct.title = title
     image,
     desc,
     category,
   };
-  console.log({ newProduct });
-
-  // api
+  console.log(newProduct);
 }

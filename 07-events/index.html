@@ -19,8 +19,17 @@
       <header>
         <h1>Shopping List</h1>
       </header>
-      <form id="formID">
-        <!-- Them san pham -->
+      <form id="form">
+        <!-- Them san pham: Create Product -->
+        <!-- title, image, price, desc, category, branch -->
+        <!-- <input type="text" id="title"> -->
+        <!-- <input type="text" id="image"> -->
+        <!-- <input type="number" /> // price -->
+        <!-- // textarea: nhap nhieu dong
+        // category: select drop dropdown 
+        <select name="" id="">
+          <option value="1">Nam</option>
+        </select> -->
         <!-- Input type text: title, image ... (1 dong)  -->
         <!-- Input type number: price, rate ... (number) -->
         <!-- Description: textarea: nhap nhieu dong thong tin -->
@@ -34,7 +43,7 @@
           <input
             type="text"
             class="form-input"
-            id="titleID"
+            id="title"
             name="item"
             placeholder="Enter Title"
           />
@@ -57,13 +66,14 @@
             placeholder="Enter Description"
           />
         </div>
-        <select id="categoryID" name="category" class="form-input">
+        <select id="category" name="category" class="form-input">
           <option value="">Select Category</option>
-          <option value="Laptop">Laptop</option>
-          <option value="Iphone">Iphone</option>
-          <option value="PC">PC</option>
+          <option value="1">Laptop Name</option>
+          <option value="2">Iphone</option>
+          <option value="3">PC</option>
         </select>
         <div class="form-control">
+          <!-- click button bat su kien submit form -->
           <button type="submit" class="btn">
             <i class="fa-solid fa-plus"></i> Add Item
           </button>

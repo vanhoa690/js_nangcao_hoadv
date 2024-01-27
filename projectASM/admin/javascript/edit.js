@@ -1,76 +1,77 @@
-// FORM
-const formElement = document.getElementById("form");
+const form = document.getElementById("form");
 const titleElement = document.getElementById("title");
 const imageElement = document.getElementById("image");
 const priceElement = document.getElementById("price");
 const descElement = document.getElementById("description");
 const categoryElement = document.getElementById("category");
 
-// Gobal: Luu ProductId
 let productId = null;
 
-// 1. addEventListener DOMLOADED
+// On DOM Load
 window.addEventListener("DOMContentLoaded", init);
-// 2. Lang nghe su kien submit
-// - Lay phan tu DOM form
 
 function init() {
-  // submit - click button submit
-  formElement.addEventListener("submit", handleSubmit);
-  getProductById();
+  // get Product Detail from product id (url)
+  getProductDetail();
+  form.addEventListener("submit", handleSubmit);
 }
 
-function getProductById() {
-  // 1 : lay productId ?productId window.location.search
+function getProductDetail() {
+  // 1. lay productId from url = 1
+
   productId = window.location.search.split("=")[1];
 
-  // 2. call api getDetail
+  // const urlParams = new URLSearchParams(window.location.search);
+  // // Lấy giá trị của id
+  // const id = urlParams.get("id");
+  // console.log(id);
+
+  console.log(productId);
+  // 2. call api get detail by id: fetch()
+
+  // 3. Co du lieu product
   const productDetail = {
     title: "Sp1",
-    image: "Image1",
-    price: 11,
-    description: "Desc 1",
-    category: "1",
+    image: "image 1",
+    price: 111,
+    desc: "desc",
+    category: "GA",
   };
 
-  // 3. Bom nguoc lai value
+  // 4. Bom nguoc du lieu vao input
   titleElement.value = productDetail.title;
   imageElement.value = productDetail.image;
   priceElement.value = productDetail.price;
-  descElement.value = productDetail.description;
+  descElement.value = productDetail.desc;
   categoryElement.value = productDetail.category;
 }
 
 function handleSubmit(event) {
-  // 1. ngan chan viec day du lieu input len url
+  // 1. ngan chan preventDefault
   event.preventDefault();
 
-  // 2. Lay du lieu input: element.value
-  // Nho Number value can lay number
+  // 2. Get element value
   const title = titleElement.value;
   const image = imageElement.value;
-  const pice = priceElement.value ? Number.parseInt(priceElement.value) : 0; // Number.parseInt()
+  // Chuyen sang number cho price
+  const price = priceElement.value ? Number(priceElement.value) : 0; //
   const desc = descElement.value;
   const category = categoryElement.value;
 
-  //3. Check validate: required (bat buoc nhap): title
+  // 3. Check validate !value_1 || !value_2
   if (!title || !image || !category) {
-    alert("Please add tilte - image - category");
+    alert("Please add info product");
     return;
   }
 
   const newProduct = {
     title,
     image,
-    pice,
+    price,
     desc,
     category,
   };
+  console.log(newProduct);
 
-  console.log({ newProduct });
-
-  // Check xem productId !== null
-  if (!productId) return;
-
-  // 4. Call Api  + productId
+  // 4. call API + productId PATCH: localhost:300/product/productId
 }
