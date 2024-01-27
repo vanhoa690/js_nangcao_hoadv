@@ -19,14 +19,22 @@
       <header>
         <h1>Shopping List</h1>
       </header>
-      <form id="form">
+      <form id="formID">
+        <!-- Them san pham -->
+        <!-- Input type text: title, image ... (1 dong)  -->
+        <!-- Input type number: price, rate ... (number) -->
+        <!-- Description: textarea: nhap nhieu dong thong tin -->
+        <!-- Category: Dropdown : select + option (dropdown) : chon category-->
+        <!-- input, form: deu phai co id (getEmlementId()) -->
+        <!-- Button type=submit: -> bat su kien submit -->
+
         <!-- input text nhap text: title; image, price (number), desc -->
         <!-- Select: Category -->
         <div class="form-control">
           <input
             type="text"
             class="form-input"
-            id="title"
+            id="titleID"
             name="item"
             placeholder="Enter Title"
           />
@@ -49,7 +57,7 @@
             placeholder="Enter Description"
           />
         </div>
-        <select id="category" name="category" class="form-input">
+        <select id="categoryID" name="category" class="form-input">
           <option value="">Select Category</option>
           <option value="Laptop">Laptop</option>
           <option value="Iphone">Iphone</option>

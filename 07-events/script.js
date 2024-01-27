@@ -1,30 +1,28 @@
-const form = document.getElementById("form");
-const titleElement = document.getElementById("title");
+// FORM
+// 1. addEventListener DOMLOADED
+window.addEventListener("DOMContentLoaded", init);
+// 2. Lang nghe su kien submit
+// - Lay phan tu DOM form
+const formElement = document.getElementById("formID");
+const titleElement = document.getElementById("titleID");
 const imageElement = document.getElementById("image");
 const descElement = document.getElementById("desc");
-const categoryElement = document.getElementById("category");
+const categoryElement = document.getElementById("categoryID");
 
-// Get element
-// lang nghe submit
-// preventDefault(): ngan can sui bot
-// Get value input: titleElement.value;
-// call api
-
-// addEventListener lang nghe su kien 'submit'
-// xay ra an button submit (button nam trong form)
-form.addEventListener("submit", handleSubmit);
+function init() {
+  // submit - click button submit
+  formElement.addEventListener("submit", handleSubmit);
+}
 
 function handleSubmit(event) {
-  // b1: ngan chan day input value len url
+  // 1. ngan chan viec day du lieu input len url
   event.preventDefault();
 
-  // b2. Get value from input
+  // 2. Lay du lieu input: element.value
   const title = titleElement.value;
   const image = imageElement.value;
   const desc = descElement.value;
   const category = categoryElement.value;
-
-  console.log({ title, image, desc, category });
 
   const newProduct = {
     title,
@@ -32,6 +30,7 @@ function handleSubmit(event) {
     desc,
     category,
   };
+  console.log({ newProduct });
 
-  // call api post(api_url, newProduct)
+  // api
 }

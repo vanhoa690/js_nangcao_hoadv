@@ -62,20 +62,21 @@ window.addEventListener("resize", () => {
   ).innerText = `Resized to ${window.innerWidth} x ${window.innerHeight}`;
 });
 
-// DOM
+// 6  - DOM
 
-// Get Single Element: getElementById('id')
+// 1. Get Single Element: getElementById('id') // nho cach nay
 document.getElementById("id");
 
-// Get Mutil Element : querySellectorAll('selector')
+// 2. Get Mutil Element : querySellectorAll('selector') // querySellectorAll
 document.querySellectorAll("selector");
 
-// Create new DOM: createElement('div')
-const div = document.createElement("div"); // con
+// 3. Create new DOM: createElement('div')  // createElement(): tạo mới thẻ html
+const divElement = document.createElement("div"); // con
 
-// div.interHTML : Update noi dung Element
-div.innerHTML = "Update content";
+// 4. divElement.interHTML : Update noi dung Element // interHTML
+// + Template string `${du_lieu_bien}` (cạnh số 1): kết hợp biến vào đc
+divElement.innerHTML = "Update content";
 
-// Insert DOM: cha.appendChild(con)
+// 5. Insert DOM: cha.appendChild(con)  // appendChild: cha nhận con
 const parentElement = document.getElementById("parentElementId");
-parentElement.appendChild(div);
+parentElement.appendChild(divElement);
