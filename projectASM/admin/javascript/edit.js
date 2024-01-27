@@ -22,7 +22,7 @@ function getProductDetail() {
   productId = window.location.search.split("=")[1];
 
   // const urlParams = new URLSearchParams(window.location.search);
-  // // Lấy giá trị của id
+  // Lấy giá trị của id
   // const id = urlParams.get("id");
   // console.log(id);
 

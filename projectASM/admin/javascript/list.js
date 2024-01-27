@@ -8,7 +8,7 @@ function init() {
 
 function handleDeleteProduct(id) {
   // alert(id);
-  // window.confirm()
+  // // window.confirm("message")
   if (window.confirm("Ban co mua xoa san pham nay ko????")) {
     // call api delete(id)
     console.log("xoa", id);
@@ -325,6 +325,7 @@ ${productList
             >Edit</a
         >
         <button
+            // su kien onclick: handleDeleteProduct(id)
             onClick=handleDeleteProduct(${product.id})
             class="font-medium text-red-600 dark:text-red-500 hover:underline"
             >Remove</
@@ -334,9 +335,9 @@ ${productList
     `
   )
   .join("")}
-// xoa bo dau ,
+
 </tbody>
   `;
-
+  // .join("") xoa bo dau ,
   productListElm.appendChild(tbody);
 }
