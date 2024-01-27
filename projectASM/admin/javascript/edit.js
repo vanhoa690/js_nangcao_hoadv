@@ -6,6 +6,9 @@ const priceElement = document.getElementById("price");
 const descElement = document.getElementById("description");
 const categoryElement = document.getElementById("category");
 
+// Gobal: Luu ProductId
+let productId = null;
+
 // 1. addEventListener DOMLOADED
 window.addEventListener("DOMContentLoaded", init);
 // 2. Lang nghe su kien submit
@@ -14,6 +17,28 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   // submit - click button submit
   formElement.addEventListener("submit", handleSubmit);
+  getProductById();
+}
+
+function getProductById() {
+  // 1 : lay productId ?productId window.location.search
+  productId = window.location.search.split("=")[1];
+
+  // 2. call api getDetail
+  const productDetail = {
+    title: "Sp1",
+    image: "Image1",
+    price: 11,
+    description: "Desc 1",
+    category: "1",
+  };
+
+  // 3. Bom nguoc lai value
+  titleElement.value = productDetail.title;
+  imageElement.value = productDetail.image;
+  priceElement.value = productDetail.price;
+  descElement.value = productDetail.description;
+  categoryElement.value = productDetail.category;
 }
 
 function handleSubmit(event) {
@@ -44,5 +69,8 @@ function handleSubmit(event) {
 
   console.log({ newProduct });
 
-  // 4. Call Api
+  // Check xem productId !== null
+  if (!productId) return;
+
+  // 4. Call Api  + productId
 }

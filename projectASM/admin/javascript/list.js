@@ -8,6 +8,7 @@ function init() {
 
 function handleDeleteProduct(id) {
   // alert(id);
+  // window.confirm()
   if (window.confirm("Ban co mua xoa san pham nay ko????")) {
     // call api delete(id)
     console.log("xoa", id);
@@ -313,7 +314,7 @@ ${productList
         scope="row"
         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
-        ${product.title.substring(0, 10)}...
+        ${product.title.substring(0, 20)}...
         </th>
         <td class="px-6 py-4">${product.category}</td>
         <td class="px-6 py-4">$${product.price}</td>
@@ -333,7 +334,7 @@ ${productList
     `
   )
   .join("")}
-
+// xoa bo dau ,
 </tbody>
   `;
 
