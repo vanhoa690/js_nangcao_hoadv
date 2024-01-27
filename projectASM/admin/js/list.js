@@ -1,5 +1,6 @@
 // On DOM Load
 window.addEventListener("DOMContentLoaded", init);
+// R + D: Read + Delete
 
 function init() {
   renderProductList();

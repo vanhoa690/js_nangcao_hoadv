@@ -1,6 +1,6 @@
 // On DOM Load
 window.addEventListener("DOMContentLoaded", init);
-// CRUD: Create
+// CRUD: Update
 // B1 Get elements
 const form = document.getElementById("form");
 const titleElement = document.getElementById("title");
@@ -8,6 +8,7 @@ const imageElement = document.getElementById("image");
 const descElement = document.getElementById("description");
 const categoryElement = document.getElementById("category");
 const priceElement = document.getElementById("price");
+
 let productId = null;
 
 // b2: lang nghe submit
@@ -65,4 +66,3 @@ function handleSubmit(event) {
 
   //b6 call api post (api_url + productId, updateProduct)
 }
-
