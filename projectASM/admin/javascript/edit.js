@@ -19,22 +19,20 @@ async function getProductDetailById() {
   // 1. Lay product Id from URL: ?id=2
   productId = window.location.search.split("=")[1]; // ?productId=id
 
-  // 2. Call API get info product: GET localhost:3000/products/productId
-  const apiUrl = `${API_URL}/${productId}`;
+  if (!productId) return;
 
-  // const res = await fetch(apiUrl);
-  // const productDetail = await res.json();
-  try {
-    const { data: productDetail } = await axios.get(apiUrl);
-    // 3. Fill data product vao input
-    titleElement.value = productDetail.title;
-    imageElement.value = productDetail.image;
-    descriptionElement.value = productDetail.description;
-    categoryElement.value = productDetail.category;
-    priceElement.value = productDetail.price;
-  } catch (e) {
-    console.log(e);
-  }
+  // 2. Call API get info product: GET localhost:3000/products/productId = end-point + id
+  //  GET await 2 lan
+  const apiUrl = `http://localhost:3000/products/${productId}`;
+  const res = await fetch(apiUrl);
+  const productDetail = await res.json();
+
+  // 3. Fill data product vao input
+  titleElement.value = productDetail.title;
+  imageElement.value = productDetail.image;
+  descriptionElement.value = productDetail.description;
+  categoryElement.value = productDetail.category;
+  priceElement.value = productDetail.price;
 }
 
 async function handleSubmit(event) {
@@ -63,20 +61,4 @@ async function handleSubmit(event) {
   };
 
   // 4. Call API PATCH json-server: localhost:3000/products/productId, newProduct
-  // nodejs xu ly BE kieu PHP $_POST[title]
-  try {
-    const apiUrl = `${API_URL}/${productId}`;
-
-    // await fetch(apiUrl, {
-    //   method: "PATCH",
-    //   body: JSON.stringify(editProduct),
-    // });
-
-    // Demo Axios
-    await axios.patch(apiUrl, editProduct);
-
-    window.location.replace("./list.html");
-  } catch (error) {
-    console.log(error);
-  }
 }

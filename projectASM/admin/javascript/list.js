@@ -2,33 +2,27 @@
 window.addEventListener("DOMContentLoaded", init);
 // R + D: Read + Delete
 
-const API_URL = "http://localhost:3000/products";
+// const API_URL = "http://localhost:3000/products";
 
 function init() {
   renderProductList();
 }
 
 async function handleDeleteProduct(id) {
-  // alert(id);
-  // // // window.confirm("message")
   if (window.confirm("Ban co mua xoa san pham nay ko????")) {
-    // Gan id vao apiUrl: template srting ``
-    // "http://localhost:3000/products/id"
-    const apiUrl = `${API_URL}/${id}`;
-
+    const apiUrl = `http://localhost:3000/products/${id}`;
     await fetch(apiUrl, {
       method: "DELETE",
     });
-    // Thong bao message
-    // console.log("xoa ok roi");
   }
 }
 
 async function renderProductList() {
-  //1.  Lay Data API fetch(api_url)
-  // 1.1 async (function) /await: Doi lan 1
-  const res = await fetch(API_URL); // GET
-  // 1.2 Doi lan 2: json()
+  //1. Lay Data API fetch(api_url)
+  const API_URL = "http://localhost:3000/products"; //end-point: products
+  // Doi lan 1: ket noi data
+  const res = await fetch(API_URL);
+  // Doi lan 2: xu ly data json()
   const productList = await res.json();
 
   // b2 tim cha de bam vao
@@ -72,7 +66,7 @@ ${productList
         >
         <button
             // su kien onclick: handleDeleteProduct(id)
-            onClick=handleDeleteProduct(${product.id})
+            onClick=handleDeleteProduct("${product.id}")
             class="font-medium text-red-600 dark:text-red-500 hover:underline"
             >Remove</
             button>
