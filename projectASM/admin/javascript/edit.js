@@ -22,15 +22,19 @@ async function getProductDetailById() {
   // 2. Call API get info product: GET localhost:3000/products/productId
   const apiUrl = `${API_URL}/${productId}`;
 
-  const res = await fetch(apiUrl);
-  const productDetail = await res.json();
-
-  // 3. Fill data product vao input
-  titleElement.value = productDetail.title;
-  imageElement.value = productDetail.image;
-  descriptionElement.value = productDetail.description;
-  categoryElement.value = productDetail.category;
-  priceElement.value = productDetail.price;
+  // const res = await fetch(apiUrl);
+  // const productDetail = await res.json();
+  try {
+    const { data: productDetail } = await axios.get(apiUrl);
+    // 3. Fill data product vao input
+    titleElement.value = productDetail.title;
+    imageElement.value = productDetail.image;
+    descriptionElement.value = productDetail.description;
+    categoryElement.value = productDetail.category;
+    priceElement.value = productDetail.price;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 async function handleSubmit(event) {
@@ -63,10 +67,13 @@ async function handleSubmit(event) {
   try {
     const apiUrl = `${API_URL}/${productId}`;
 
-    await fetch(apiUrl, {
-      method: "PATCH",
-      body: JSON.stringify(editProduct),
-    });
+    // await fetch(apiUrl, {
+    //   method: "PATCH",
+    //   body: JSON.stringify(editProduct),
+    // });
+
+    // Demo Axios
+    await axios.patch(apiUrl, editProduct);
 
     window.location.replace("./list.html");
   } catch (error) {

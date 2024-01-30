@@ -60,8 +60,24 @@
 - Create Product: method: POST (+ body)
   body: JSON.stringify(data)
 
-- Edit Product: method: PATCH (PUT) (+body)
-  await fetch(API_URL, {
-  method: "PATCH",
-  body: JSON.stringify(editProduct),
-  });
+- Edit Product:
+- productDetail
+  const apiUrl = `${API_URL}/${productId}`;
+
+  const res = await fetch(apiUrl);
+  const productDetail = await res.json();
+
+method: PATCH (PUT) (+body)
+await fetch(API_URL, {
+method: "PATCH",
+body: JSON.stringify(editProduct),
+});
+
+# Call API Error handling:
+
+try {
+// call api
+} catch(error)
+{
+console.log(error)
+}
