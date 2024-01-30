@@ -93,12 +93,12 @@
       "price": 222
     },
     {
-      "id": "2725",
-      "title": "New 2",
+      "title": "Update 122121",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "description": "2",
+      "description": "mo ta update 22222",
       "category": "PC",
-      "price": 2
+      "price": 44444,
+      "id": "2725"
     }
   ]
 }

@@ -19,10 +19,10 @@
 # Kết nối Server (API): lấy data (products)
 
 - JS:
-
+  - Fetch():
   - fetch(api_url): mặc định có sẵn (ko can cai them gi ca)
   - VD: fetch(http://localhost:3000/products)
-
+  - Axios: 
   - thư viện bên ngoài axios: https://www.npmjs.com/package/axios
   - Nhúng JS (html): <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
@@ -36,7 +36,7 @@
 - GET LIST
   - await fetch(API_URL)
   - await res.json()
-  
+
 - DELETE PRODUCT:
   API_URL + id (xoa)
   fetch(API_URL, {
