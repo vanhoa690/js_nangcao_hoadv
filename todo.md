@@ -19,7 +19,7 @@
 # Kết nối Server (API): lấy data (products)
 
 - JS:
-  - Fetch():
+  - Fetch(): fetch(api_url: end-poin-api): http://localhost:3000/products (get + post) (edit or delete + id)
   - fetch(api_url): mặc định có sẵn (ko can cai them gi ca)
   - VD: fetch(http://localhost:3000/products)
   - Axios: 
@@ -29,9 +29,9 @@
 # fetch(api_url, options {}): su dung async /await
 
 - Fetch Option: 3 option: GET - POST - PUT (PATCH) - DELETE
-  method: DELETE
-  body: create or edit (newProduct or editProduct): JSON.stringify()
-  headers: 'Content-Type': 'application/json' or token
+  - method: DELETE (default: GET)
+  - body: create or edit (newProduct or editProduct): JSON.stringify()
+  - headers: 'Content-Type': 'application/json' or token
 
 - GET LIST
   - await fetch(API_URL)

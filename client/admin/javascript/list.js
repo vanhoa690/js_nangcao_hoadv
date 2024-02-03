@@ -18,11 +18,12 @@ async function handleDeleteProduct(id) {
 }
 
 async function renderProductList() {
-  //1. Lay Data API fetch(api_url)
-  const API_URL = "http://localhost:3000/products"; //end-point: products
-  // Doi lan 1: ket noi data
+  //1. Lay Data API fetch(api_url): GET
+  const API_URL = "http://localhost:3000/products";
+  // js: async / await
+  // Doi lan 1: ket noi api fetch
   const res = await fetch(API_URL);
-  // Doi lan 2: xu ly data json()
+  // Doi lan 2: xu ly data .json()
   const productList = await res.json();
 
   // b2 tim cha de bam vao

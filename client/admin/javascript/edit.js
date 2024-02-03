@@ -22,17 +22,17 @@ async function getProductDetailById() {
   if (!productId) return;
 
   // 2. Call API get info product: GET localhost:3000/products/productId = end-point + id
-  //  GET await 2 lan
+  const apiUrl = `http://localhost:3000/products/${productId}`;
   // Axios
   try {
-    const apiUrl = `http://localhost:3000/products/${productId}`;
+    // call api
     const { data: productDetail } = await axios.get(apiUrl);
-
-    // const productDetail = res.data
+    // const productDetail = data.data
+    // const dataFetch = await fetch(apiUrl);
+    // // Doi lan 1
     // const res = await fetch(apiUrl);
-    // console.log("res fetch ", res);
+    // // Doi lan 2
     // const productDetail = await res.json();
-
     // 3. Fill data product vao input
     titleElement.value = productDetail.title;
     imageElement.value = productDetail.image;
@@ -40,7 +40,7 @@ async function getProductDetailById() {
     categoryElement.value = productDetail.category;
     priceElement.value = productDetail.price;
   } catch (error) {
-    console.log(error);
+    console.error(error.message);
   }
 }
 
@@ -71,6 +71,8 @@ async function handleSubmit(event) {
 
   // 4. Call API PATCH json-server: localhost:3000/products/productId, newProduct
   // EDIT: method PATCH (PUT) + body: JSON.stringfy(editProduct)
+  if (!productId) return;
+
   const apiUrl = `http://localhost:3000/products/${productId}`;
   await axios.put(apiUrl, editProduct);
 
@@ -79,5 +81,6 @@ async function handleSubmit(event) {
   //   body: JSON.stringify(editProduct),
   // });
 
+  // bay sang man list
   window.location.replace("./list.html");
 }
