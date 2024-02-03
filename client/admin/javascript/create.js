@@ -37,8 +37,8 @@ async function handleSubmit(event) {
     price: price ? Number(price) : 0, // chuyen price sang number
   };
 
-  // 4. Call API POST json-server: localhost:3000/products, newProduct
-  // method: POST, data: JSON.stringify
+  // 4. Call API POST json-server: http://localhost:3000/products, newProduct
+  // method: POST, body: JSON.stringify
   const apiUrl = "http://localhost:3000/products";
 
   await fetch(apiUrl, {
@@ -46,6 +46,6 @@ async function handleSubmit(event) {
     body: JSON.stringify(newProduct),
   });
 
-  // Them xong bay sang man list product
+  // bay sang man list
   window.location.replace("./list.html");
 }

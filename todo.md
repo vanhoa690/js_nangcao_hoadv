@@ -1,6 +1,7 @@
 # JSON Server
 
 - https://www.npmjs.com/package/json-server
+- https://github.com/typicode/json-server
 - Install NodeJs: https://nodejs.org/en
 - Install json-server:
   - Create folder: server
@@ -9,7 +10,7 @@
   - Create file: db.json: + thao tac update data json (bang tay)
   - npx json-server db.json (terminal)
 
-# JSON : Server
+# DB.JSON
 
 - db.json:dữ liệu data: cặp key - value
 - Mỗi key: products: 1 đầu api (end-point): list, Thêm sửa xóa
@@ -19,21 +20,23 @@
 # Kết nối Server (API): lấy data (products)
 
 - JS:
-  - Fetch(): fetch(api_url: end-poin-api): http://localhost:3000/products (get + post) (edit or delete + id)
+  - fetch(): fetch(api_url: end-poin-api): http://localhost:3000/products (get + post) (edit or delete + id)
   - fetch(api_url): mặc định có sẵn (ko can cai them gi ca)
   - VD: fetch(http://localhost:3000/products)
-  - Axios: 
+  - Axios:
   - thư viện bên ngoài axios: https://www.npmjs.com/package/axios
   - Nhúng JS (html): <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
 # fetch(api_url, options {}): su dung async /await
 
-- Fetch Option: 3 option: GET - POST - PUT (PATCH) - DELETE
-  - method: DELETE (default: GET)
+- Fetch Option: 3 option:
+
+  - method: 'DELETE' (default: GET) GET - POST - PUT (PATCH) - DELETE
   - body: create or edit (newProduct or editProduct): JSON.stringify()
   - headers: 'Content-Type': 'application/json' or token
 
 - GET LIST
+
   - await fetch(API_URL)
   - await res.json()
 
@@ -55,7 +58,7 @@
 
 method: PATCH (PUT) (+body)
 await fetch(API_URL, {
-method: "PATCH",
+method: "PUT",
 body: JSON.stringify(editProduct),
 });
 
