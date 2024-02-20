@@ -2,19 +2,42 @@ const form = document.getElementById("form");
 const titleElement = document.getElementById("title");
 const imageElement = document.getElementById("image");
 const descriptionElement = document.getElementById("description");
-const categoryElement = document.getElementById("category");
 const priceElement = document.getElementById("price");
+
 const API_URL = "http://localhost:3000/products"; // end-point
 
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
+  getCategoryList();
   form.addEventListener("submit", handleSubmit);
+}
+
+async function getCategoryList() {
+  const res = await fetch("http://localhost:3000/categories");
+  const categoryList = await res.json();
+  const categoryListElm = document.getElementById("category-list");
+  const optionList = document.createElement("select");
+  optionList.classList.add("bg-gray-50", "border", "rounded-lg");
+  optionList.setAttribute("id", "category");
+  optionList.innerHTML = `
+  <select>
+  ${categoryList
+    .map(
+      (category) => `
+  <option value=${category.id}>${category.name}</option>`
+    )
+    .join("")}
+    </select>
+  `;
+
+  categoryListElm.appendChild(optionList);
 }
 
 async function handleSubmit(event) {
   //1. ngan chan preventDefault()
   event.preventDefault();
+  const categoryElement = document.getElementById("category");
 
   // 2. Lay du lieu input: element.value
   const title = titleElement.value;
