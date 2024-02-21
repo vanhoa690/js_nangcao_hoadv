@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Shopping List</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Shopping List</h1>
+      </header>
+      <form id="form">
+        <!-- Input type text: title, image ... (1 dong)  -->
+        <!-- Input type number: price, rate ... (number) -->
+        <!-- Description: textarea: nhap nhieu dong thong tin -->
+        <!-- Category: Dropdown : select + option (dropdown) : chon category-->
+        <!-- input, form: deu phai co id (getEmlementId()) -->
+        <!-- Button type=submit: -> bat su kien submit -->
+
+        <!-- input text nhap text: title; image, price (number), desc -->
+        <!-- Select: Category -->
+        <div class="form-control">
+          <input
+            type="text"
+            class="form-input"
+            id="title"
+            name="item"
+            placeholder="Enter Title"
+          />
+        </div>
+        <div class="form-control">
+          <input
+            type="text"
+            class="form-input"
+            id="image"
+            name="item"
+            placeholder="Enter Image"
+          />
+        </div>
+        <div class="form-control">
+          <input
+            type="text"
+            class="form-input"
+            id="description"
+            name="item"
+            placeholder="Enter Description"
+          />
+        </div>
+        <select id="category" name="category" class="form-input">
+          <option value="">Select Category</option>
+          <option value="1">Laptop</option>
+          <option value="Iphone">Iphone</option>
+          <option value="PC">PC</option>
+        </select>
+        <div class="form-control">
+          <!-- click button bat su kien submit form -->
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-plus"></i> Add Item
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

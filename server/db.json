@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": "e686",
+      "title": "3",
+      "image": "3",
+      "description": "3",
+      "category": "2",
+      "price": 3
+    },
+    {
+      "id": "1a0f",
+      "title": "3",
+      "image": "3",
+      "description": "333",
+      "category": "2",
+      "price": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Laptop"
+    },
+    {
+      "id": 2,
+      "name": "TV"
+    }
+  ]
+}

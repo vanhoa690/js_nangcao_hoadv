@@ -39,6 +39,8 @@ const filterCompany = companies.filter((company) => {
 
 // Reduce
 // Shopping cart example (objects)
+
+// totalBill ?
 const cart = [
   { id: 1, name: "Product 1", price: 130, soluong: 1 },
   { id: 2, name: "Product 2", price: 150, soluong: 2 }, // 2
